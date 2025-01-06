@@ -26,6 +26,42 @@ header, nav, article, aside, footer {
     border: 1px solid #ebe3c3;
 }
 
+/* Header */
+header {
+    grid-area: header;
+    background-color: #214f91;    
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: white;
+}
+
+.header-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.header-info p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 /* Footer */
 footer {
     grid-area: footer;
