@@ -63,7 +63,28 @@
         </div>
     </nav>
     <article></article>
-    <aside></aside>
+    <aside>
+        <h2>Notifikasi Peminjaman</h2>
+        <?php
+        $notifikasiQuery = "SELECT p.nama_prasarana, pm.status_peminjaman 
+                            FROM peminjaman pm 
+                            JOIN prasarana p ON pm.id_prasarana = p.id_prasarana
+                            WHERE pm.status_peminjaman = 'Menunggu Verifikasi'";
+        $notifikasiResult = $conn->query($notifikasiQuery);
+
+        if ($notifikasiResult) {
+            if ($notifikasiResult->num_rows > 0) {
+                while ($row = $notifikasiResult->fetch_assoc()) {
+                    echo "<p>{$row['nama_prasarana']}, {$row['status_peminjaman']}</p>";
+                }
+            } else {
+                echo "<p>Tidak ada notifikasi.</p>";
+            }
+        } else {
+            echo "<p>Error pada query notifikasi: " . $conn->error . "</p>";
+        }
+        ?>
+    </aside>
     <footer>
         <?php
             require '../database.php';
