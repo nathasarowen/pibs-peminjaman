@@ -61,3 +61,37 @@ header {
     font-size: 16px;
     line-height: 1.5;
 }
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color: #214f91;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-left p, .footer-center p, .footer-right p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.footer-right p:first-child {
+    font-weight: bold;
+    font-size: 16px;
+}
