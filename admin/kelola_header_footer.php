@@ -90,7 +90,21 @@ $footerData = $footerResult ? $footerResult->fetch_assoc() : [
     
     <!-- kelola header -->
 
-    <!-- kelola footer -->
+    <h2>Kelola Footer</h2>
+    <form action="" method="POST">
+        <input type="hidden" name="nama_setting" value="footer">
+
+        <label for="nama_web">Nama Web:</label>
+        <input type="text" id="nama_web" name="nama_web" value="<?= htmlspecialchars($footerData['nama_web'], ENT_QUOTES, 'UTF-8'); ?>" required><br>
+
+        <label for="slogan_web">Slogan Web:</label>
+        <input type="text" id="slogan_web" name="slogan_web" value="<?= htmlspecialchars($footerData['slogan_web'], ENT_QUOTES, 'UTF-8'); ?>" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<?= htmlspecialchars($footerData['email'], ENT_QUOTES, 'UTF-8'); ?>" required><br>
+
+        <button type="submit">Simpan Perubahan Footer</button>
+    </form>
 </article>
 <aside>
     <h2>Notifikasi Peminjaman</h2>
