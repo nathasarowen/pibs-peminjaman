@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function updateNamaPrasarana() {
+            const select = document.getElementById('prasarana');
+            const namaPrasarana = select.options[select.selectedIndex].getAttribute('data-nama');
+            document.getElementById('nama_prasarana').value = namaPrasarana;
+        }
+    </script>
 </head>
 <body>
     <?php
         require '../database.php';
         
-        //buat crud nya
+        // buat ambil data dropdown prasarana
+        $prasaranaQuery = "SELECT id_prasarana, nama_prasarana FROM prasarana WHERE status = 'aktif'";
+        $prasaranaResult = $conn->query($prasaranaQuery);
     ?>
     <header>
         <?php
@@ -50,9 +59,80 @@
         </div>
         <div class="icon">
             <h4 style="color: gray;">Layanan Pengajuan Dokumen</h4>
-        </div>
+        </div>
     </nav>
-    <article></article>
+    <article>
+        <h2>Form Pengajuan Peminjaman</h2>
+        <form action="submit_form.php" method="post" enctype="multipart/form-data">
+            <!-- Data Pengajuan Peminjaman -->
+            <fieldset>
+                <legend>Data Pengajuan Peminjaman</legend>
+                <label for="prasarana">Prasarana:</label>
+                <select id="prasarana" name="id_prasarana" required onchange="updateNamaPrasarana()">
+                    <option value="" data-nama="">-- Pilih Prasarana --</option>
+                    <?php
+                    if ($prasaranaResult && $prasaranaResult->num_rows > 0) {
+                        while ($row = $prasaranaResult->fetch_assoc()) {
+                            echo "<option value=\"{$row['id_prasarana']}\" data-nama=\"{$row['nama_prasarana']}\">{$row['nama_prasarana']}</option>";
+                        }
+                    } else {
+                        echo "<option value=\"\">Tidak ada data</option>";
+                    }
+                    ?>
+                </select>
+                <input type="hidden" id="nama_prasarana" name="nama_prasarana">
+
+                <div class="form-row">
+                    <div>
+                        <label for="jumlah_peserta">Jumlah Peserta:</label>
+                        <input type="number" id="jumlah_peserta" name="jumlah_peserta" placeholder="Masukkan jumlah peserta" min="1" required>
+                    </div>
+                    <div>
+                        <label for="tanggal_peminjaman">Tanggal:</label>
+                        <input type="date" id="tanggal_peminjaman" name="tanggal_peminjaman" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="waktu_mulai">Waktu Mulai:</label>
+                        <input type="time" id="waktu_mulai" name="waktu_mulai" required>
+                    </div>
+                    <div>
+                        <label for="waktu_selesai">Waktu Selesai:</label>
+                        <input type="time" id="waktu_selesai" name="waktu_selesai" required>
+                    </div>
+                </div>
+
+                <label for="deskripsi">Deskripsi:</label>
+                <textarea id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi..." rows="4" required></textarea>
+            </fieldset>
+
+            <!-- Data Pengaju -->
+            <fieldset>
+                <legend>Data Pengaju</legend>
+                <div class="form-row">
+                    <div>
+                        <label for="status_pengaju">Status Pengaju:</label>
+                        <select id="status_pengaju" name="status_pengaju" required>
+                            <option value="">-- Pilih Status --</option>
+                            <option value="Mahasiswa">Mahasiswa</option>
+                            <option value="Pegawai">Pegawai</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nim_nik">NIM/NIK:</label>
+                        <input type="text" id="nim_nik" name="nim_nik" placeholder="Masukkan NIM/NIK Anda" required>
+                    </div>
+                </div>
+
+                <label for="no_whatsapp">Nomor WhatsApp:</label>
+                <input type="text" id="no_whatsapp" name="no_whatsapp" placeholder="Masukkan nomor WhatsApp Anda" required>
+            </fieldset>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </article>
     <aside>
     <h2>Status Peminjaman</h2>
         <?php
