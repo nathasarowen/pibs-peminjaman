@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;    
+}
+
+* {
+    box-sizing: border-box;    
+}
+
+body {
+    font-family: "Albert Sans", sans-serif;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav article aside"
+        "footer footer footer";
+    grid-template-columns: 25% 50% 25%;
+    gap: 10px;
+    max-width: 100vw;    
+    background-color: #f5f7ff;
+}
+
+header, nav, article, aside, footer {
+    padding: 20px;
+    border: 1px solid #ebe3c3;
+}
