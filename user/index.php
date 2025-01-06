@@ -53,7 +53,21 @@
         </div>
     </nav>
     <article></article>
-    <aside></aside>
+    <aside>
+    <h2>Status Peminjaman</h2>
+        <?php
+            $peminjamanQuery = "SELECT nama_prasarana, status_peminjaman FROM peminjaman";
+            $peminjamanResult = $conn->query($peminjamanQuery);
+
+            if ($peminjamanResult && $peminjamanResult->num_rows > 0) {
+                while ($row = $peminjamanResult->fetch_assoc()) {
+                    echo "<p>{$row['nama_prasarana']}, {$row['status_peminjaman']}</p>";
+                }
+            } else {
+                echo "<p>Belum ada data peminjaman.</p>";
+            }
+        ?>
+    </aside>
     <footer>
     <?php
             require '../database.php';

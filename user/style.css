@@ -99,6 +99,15 @@ nav h4 {
     font-weight: bold;
 }
 
+/* Aside */
+aside {
+    grid-area: aside;
+    background-color: white;
+    border: 1px solid #214f91;
+    padding-top: 2px;
+    font-size: 0.9rem;
+}
+
 /* Footer */
 footer {
     grid-area: footer;
