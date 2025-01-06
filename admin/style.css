@@ -99,6 +99,94 @@ nav h4 {
     font-weight: bold;    
 }
 
+/* Artikel */
+article {
+    grid-area: article;
+    background-color: white;
+    border: 1px solid #214f91;
+    overflow-x: auto;
+    padding-top: 2px;
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Tombol */
+/* Styling Button */
+button {
+    padding: 5px 10px;
+    background-color: #214f91;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1b4177;
+}
+
+/* Styling untuk kolom aksi */
+td:last-child {
+    text-align: center; /* Pusatkan konten di kolom */
+}
+
+/* Styling untuk tombol ikon */
+.aksi-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.aksi-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #214f91;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.aksi-buttons a:hover {
+    background-color: #1b4177;
+    transform: scale(1.1); /* Efek membesar saat hover */
+}
+
+.aksi-buttons a:active {
+    transform: scale(0.95); /* Efek mengecil saat diklik */
+}
+
 /* Aside */
 aside {
     grid-area: aside;
@@ -140,4 +228,100 @@ footer {
 .footer-right p:first-child {
     font-weight: bold;
     font-size: 16px;
+}
+
+/* Styling untuk Popup */
+#popup-container {
+    display: none; /* Popup awalnya disembunyikan */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    z-index: 1000;
+    overflow-y: auto; /* Tambahkan scroll jika konten popup terlalu panjang */
+}
+
+#popup {
+    background: #ffffff; /* Warna dasar popup */
+    padding: 20px 30px; /* Jarak di dalam popup */
+    margin: 50px auto; /* Jarak atas dan tengahkan secara horizontal */
+    width: 60%; /* Lebar popup */
+    max-width: 600px; /* Maksimal lebar untuk layar besar */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Bayangan popup */
+    position: relative; /* Untuk memastikan elemen di dalam tetap */
+}
+
+/* Styling untuk Judul Popup */
+#popup h3 {
+    font-size: 24px;
+    margin: 0 0 20px; /* Jarak bawah judul */
+    font-weight: bold;
+    color: #214f91; /* Warna biru sesuai tema */
+    text-align: center;
+}
+
+/* Styling untuk Teks di dalam Popup */
+#popup p {
+    font-size: 16px;
+    margin: 10px 0; /* Jarak antar paragraf */
+    line-height: 1.6; /* Jarak antar baris teks */
+    color: #333; /* Warna teks */
+}
+
+/* Tombol Tertutup di Popup */
+#popup button {
+    display: inline-block;
+    margin: 20px auto 0; /* Jarak atas tombol */
+    padding: 10px 20px;
+    background-color: #214f91; /* Warna tombol */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#popup button:hover {
+    background-color: #1b4177; /* Warna tombol saat hover */
+}
+
+/* Responsif untuk Popup */
+@media (max-width: 600px) {
+    #popup {
+        width: 90%; /* Lebar penuh pada layar kecil */
+        padding: 15px; /* Kurangi padding */
+    }
+
+    #popup h3 {
+        font-size: 20px; /* Ukuran judul lebih kecil */
+    }
+
+    #popup p {
+        font-size: 14px; /* Ukuran teks lebih kecil */
+    }
+
+    #popup button {
+        font-size: 14px; /* Ukuran tombol lebih kecil */
+    }
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    form button {
+        width: 100%;
+    }
 }

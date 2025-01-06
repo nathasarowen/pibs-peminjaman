@@ -149,7 +149,7 @@
         ?>
     </aside>
     <footer>
-    <?php
+        <?php
             require '../database.php';
 
             //query buat ambil data site_settings dgn nama_setting "footer"
