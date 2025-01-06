@@ -62,6 +62,43 @@ header {
     line-height: 1.5;
 }
 
+/* Navigasi */
+nav {
+    grid-area: nav;
+    background-color: white;
+    border: 1px solid #214f91;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+nav .icon {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-left 0.3s ease-in-out;
+}
+
+nav .icon:hover {
+    background-color: #e3e3e4;
+    border-left: 6px solid #214f91;    
+}
+
+nav .icon.active {
+    background-color: #fde0c4;
+    border-left: 6px solid #E78F81;    
+}
+
+nav h4 {
+    margin: 0;
+    font-weight: bold;
+}
+
 /* Footer */
 footer {
     grid-area: footer;
