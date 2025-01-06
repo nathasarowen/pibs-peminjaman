@@ -99,6 +99,88 @@ nav h4 {
     font-weight: bold;
 }
 
+/* Article */
+article {
+    grid-area: article;
+    background-color: white;
+    border: 1px solid #214f91;
+    overflow-x: auto;
+    padding-top: 2px;
+}
+
+/* Styling untuk Form */
+form {
+    background-color: #f8f9fa;
+    border: 1px solid #ebe3c3;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk Fieldset dan Legend */
+form fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+form legend {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 10px;
+}
+
+/* Styling untuk Label */
+form label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Styling untuk Input, Select, dan Textarea */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Grup untuk Status Pengaju dan NIM/NIK */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row > div {
+    flex: 1; /* Sama rata untuk semua kolom */
+}
+
+/* Styling Tombol */
+form button {
+    background-color: #214f91;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1b4177;
+}
+
 /* Aside */
 aside {
     grid-area: aside;
