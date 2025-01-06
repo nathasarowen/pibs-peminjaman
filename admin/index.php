@@ -39,7 +39,29 @@
                 <p><?= htmlspecialchars($headerData['alamat'], ENT_QUOTES, 'UTF-8'); ?></p>
             </div>
     </header>
-    <nav></nav>
+    <nav>
+        <div class="icon">
+            <a href="index.php">
+                <h4>Layanan Prasarana</h4>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="kelola_prasarana.php">
+                <h4>Kelola Prasarana</h4>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="kelola_header_footer.php">
+                <h4>Kelola Header & Footer</h4>
+            </a>
+        </div>
+        <div class="icon">
+            <h4 style="color: gray;">Layanan Alat</h4>
+        </div>
+        <div class="icon">
+            <h4 style="color: gray;">Layanan Pengajuan Dokumen</h4>
+        </div>
+    </nav>
     <article></article>
     <aside></aside>
     <footer>
