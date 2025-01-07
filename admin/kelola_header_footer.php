@@ -88,7 +88,21 @@ $footerData = $footerResult ? $footerResult->fetch_assoc() : [
         <div class="notification"><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></div>
     <?php endif; ?>
     
-    <!-- kelola header -->
+    <h2>Kelola Header</h2>
+    <form action="" method="POST">
+        <input type="hidden" name="nama_setting" value="header">
+
+        <label for="nama_web">Nama Web:</label>
+        <input type="text" id="nama_web" name="nama_web" value="<?= htmlspecialchars($headerData['nama_web'], ENT_QUOTES, 'UTF-8'); ?>" required><br>
+
+        <label for="slogan_web">Slogan Web:</label>
+        <input type="text" id="slogan_web" name="slogan_web" value="<?= htmlspecialchars($headerData['slogan_web'], ENT_QUOTES, 'UTF-8'); ?>" required><br>
+
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" value="<?= htmlspecialchars($headerData['alamat'], ENT_QUOTES, 'UTF-8'); ?>" required><br>
+
+        <button type="submit">Simpan Perubahan Header</button>
+    </form>
 
     <h2>Kelola Footer</h2>
     <form action="" method="POST">
