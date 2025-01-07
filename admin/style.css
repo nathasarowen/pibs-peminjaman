@@ -108,6 +108,83 @@ article {
     padding-top: 2px;
 }
 
+/* Styling untuk Form */
+form {
+    background-color: #f8f9fa;
+    border: 1px solid #ebe3c3;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk Label */
+form label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Styling untuk Textarea */
+form textarea {
+    width: 100%; /* Lebar penuh untuk textarea */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: vertical; /* Hanya izinkan perubahan ukuran vertikal */
+    font-family: inherit; /* Gunakan font yang sama dengan form lainnya */
+}
+
+
+/* Styling untuk Input dan Select */
+form input, form select {
+    width: 100%; /* Lebar penuh untuk semua input */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Grup untuk Tanggal, Waktu Mulai, dan Waktu Selesai */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row > div {
+    flex: 1; /* Setiap elemen dalam row memiliki lebar sama */
+}
+
+/* Styling Tombol */
+form button {
+    background-color: #214f91;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1b4177;
+}
+
+form button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
 /* Tabel */
 table {
     width: 100%;
