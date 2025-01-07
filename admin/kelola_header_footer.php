@@ -51,7 +51,7 @@ $footerData = $footerResult ? $footerResult->fetch_assoc() : [
 </head>
 <body>
 <header>
-    <img src="../aku2.png" alt="Logo Web" class="logo">
+    <img src="../aku.jpg" alt="Logo Web" class="logo">
     <div class="header-info">
         <h1><?= htmlspecialchars($headerData['nama_web'] ?? 'Nama Web Default', ENT_QUOTES, 'UTF-8'); ?></h1>
         <p><?= htmlspecialchars($headerData['slogan_web'] ?? 'Slogan Default', ENT_QUOTES, 'UTF-8'); ?></p>
